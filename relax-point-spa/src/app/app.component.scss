@@ -1,0 +1,28 @@
+@import './config.scss';
+
+nav {
+  background-color: $primary-color;
+  padding: 10px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+
+    li a {
+      padding: 1rem;
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: background-color 0.2s;
+      border-radius: 10px;
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+  }
+}

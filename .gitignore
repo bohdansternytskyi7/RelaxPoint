@@ -1,0 +1,42 @@
+# compiled output
+/relax-point-spa/dist
+/relax-point-spa/tmp
+/relax-point-spa/out-tsc
+
+# dependencies
+/relax-point-spa/node_modules
+/relax-point-web-api/node_modules
+/relax-point-spa/package-lock.json
+/relax-point-web-api/package-lock.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+/relax-point-spa/.editorconfig

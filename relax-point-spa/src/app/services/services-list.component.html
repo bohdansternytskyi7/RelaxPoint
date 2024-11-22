@@ -1,0 +1,30 @@
+<div class="services-list">
+  <h2>Lista Usług</h2>
+
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    Ładowanie danych...
+  </div>
+
+  <table *ngIf="!loading && !error">
+    <thead>
+      <tr>
+        <th>Nazwa</th>
+        <th>Cena</th>
+        <th>Czas Trwania</th>
+        <th>Akcje</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let service of services">
+        <td>{{ service.name }}</td>
+        <td>{{ service.price }} PLN</td>
+        <td>{{ service.duration }}</td>
+        <td><button class="btn-book" [routerLink]="['/reservations']">Rezerwuj</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
