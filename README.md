@@ -2,6 +2,7 @@
 
 ## Uruchomienie frontu
 #### W terminalu wejść do relax-point-spa
+#### Pobrać niezbędne pakiety "npm install"
 #### Uruchomić za pomocą "ng serve" (aplikacja uruchomi się na localhost:4200)
 
 ## Uruchomienie backendu

@@ -24,7 +24,7 @@ export class ServicesListComponent implements OnInit, OnDestroy {
   openDialog(service: Service) {
     const dialogFactory = this.componentFactoryResolver.resolveComponentFactory(ReservationDialogComponent);
     const dialogRef = this.container.createComponent(dialogFactory);
-    dialogRef.instance.defaultService = this.services.find(s => s.id === service.id);
+    dialogRef.instance.defaultService = service;
     dialogRef.instance.services = this.services;
     this.subs.push(dialogRef.instance.closed.subscribe(() => {
       dialogRef.destroy();
