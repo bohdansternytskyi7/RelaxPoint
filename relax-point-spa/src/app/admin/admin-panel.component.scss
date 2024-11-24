@@ -38,7 +38,7 @@
       transition: background-color 0.2s, color 0.2s;
 
       &:hover {
-        background-color: $secondary-color;
+        background-color: $primary-darker-color;
         color: white;
       }
     }

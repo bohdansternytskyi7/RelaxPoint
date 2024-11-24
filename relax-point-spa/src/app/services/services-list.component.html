@@ -1,21 +1,14 @@
 <div class="services-list">
   <h2>Lista Usług</h2>
-
-  <div *ngIf="error" class="error">
-    {{ error }}
-  </div>
-
-  <div *ngIf="loading" class="loading">
-    Ładowanie danych...
-  </div>
-
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <div *ngIf="loading" class="loading">Ładowanie danych...</div>
   <table *ngIf="!loading && !error">
     <thead>
       <tr>
         <th>Nazwa</th>
         <th>Cena</th>
         <th>Czas Trwania</th>
-        <th>Akcje</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -23,8 +16,9 @@
         <td>{{ service.name }}</td>
         <td>{{ service.price }} PLN</td>
         <td>{{ service.duration }}</td>
-        <td><button class="btn-book" [routerLink]="['/reservations']">Rezerwuj</button></td>
+        <td><button class="btn-book" (click)="openDialog(service)">Rezerwuj</button></td>
       </tr>
     </tbody>
   </table>
 </div>
+<ng-template #dialogContainer></ng-template>

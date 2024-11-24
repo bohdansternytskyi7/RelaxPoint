@@ -1,0 +1,25 @@
+<div class="dialog-overlay">
+  <div class="dialog-container">
+    <h2>Rezerwacja usługi</h2>
+    <div class="dialog-content">
+      <label for="service">Usługa:</label>
+      <select id="service" [(ngModel)]="selectedServiceId">
+        <option *ngFor="let service of services; trackBy: trackByService" [value]="service.id">
+          {{ service.name }} ({{ service.price }} zł, {{ service.duration }} min)
+        </option>
+      </select>
+      <label for="date">Data:</label>
+      <input type="date" id="date" [(ngModel)]="selectedDate">
+      <label for="time">Godzina:</label>
+      <select id="time" [(ngModel)]="selectedTime">
+        <option *ngFor="let time of availableTimes" [value]="time">
+          {{ time }}
+        </option>
+      </select>
+    </div>
+    <div class="dialog-actions">
+      <button class="cancel" (click)="close()">Anuluj</button>
+      <button class="confirm" [disabled]="!selectedServiceId || !selectedTime ||!selectedDate" (click)="confirm()">Potwierdź</button>
+    </div>
+  </div>
+</div>

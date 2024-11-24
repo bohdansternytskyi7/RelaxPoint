@@ -1,3 +1,5 @@
+@import '../config.scss';
+
 .services-list {
   width: 100%;
   max-width: 1200px;
@@ -26,9 +28,7 @@
     }
 
     th {
-      background-color: #0075f3;
-      color: white;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
 
     td {
@@ -45,14 +45,14 @@
     padding: 8px 16px;
     font-size: 1rem;
     color: white;
-    background-color: #28a745;
+    background-color: $primary-color;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: all 0.2s;
 
     &:hover {
-      background-color: #218838;
+      background-color: $primary-darker-color;
       transform: translateY(-2px);
     }
 

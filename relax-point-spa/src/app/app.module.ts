@@ -11,6 +11,8 @@ import { ServicesListComponent } from './services/services-list.component';
 import { ReservationListComponent } from './reservations/reservation-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServicesService } from './services.service';
+import { ReservationDialogComponent } from './services/reservation-dialog/reservation-dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { ServicesService } from './services.service';
     RegisterComponent,
     LoginComponent,
     ServicesListComponent,
-    ReservationListComponent
+    ReservationListComponent,
+    ReservationDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ ServicesService],
   bootstrap: [AppComponent]

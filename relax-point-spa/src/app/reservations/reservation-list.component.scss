@@ -35,6 +35,10 @@
       color: #555;
     }
 
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
     .status-pending {
       color: $orange-color;
       font-weight: bold;
@@ -54,14 +58,15 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
   }
 
   .btn-edit {
-    background-color: $primary-color;
+    background-color: $orange-color;
 
     &:hover {
-      background-color: $secondary-color;
+      background-color: $orange-darker-color;
+      transform: translateY(-2px);
     }
   }
 
@@ -70,6 +75,7 @@
 
     &:hover {
       background-color: $red-darker-color;
+      transform: translateY(-2px);
     }
   }
 }
