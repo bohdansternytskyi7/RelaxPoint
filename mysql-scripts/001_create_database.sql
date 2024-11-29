@@ -4,6 +4,7 @@ USE RelaxPoint;
 CREATE TABLE Users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100),
+  surnamename VARCHAR(100),
   email VARCHAR(100) UNIQUE,
   password VARCHAR(255),
   role ENUM('client', 'employee', 'admin')

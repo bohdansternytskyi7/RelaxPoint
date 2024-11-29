@@ -41,3 +41,4 @@ testem.log
 Thumbs.db
 /relax-point-spa/.editorconfig
 /.vscode/launch.json
+/relax-point-spa/.vscode/launch.json

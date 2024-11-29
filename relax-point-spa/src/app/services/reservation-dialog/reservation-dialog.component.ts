@@ -16,12 +16,14 @@ export class ReservationDialogComponent implements OnInit {
   selectedDate: string | null = null;
   selectedTime: string | null = null;
   availableTimes: string[] = [];
+  minDate: string = '';
 
   ngOnInit() {
     this.generateAvailableTimes();
     if (this.defaultService) {
       this.selectedServiceId = this.defaultService.id;
     }
+    this.minDate = new Date().toISOString().split('T')[0];
   }
 
   generateAvailableTimes() {

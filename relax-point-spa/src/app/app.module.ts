@@ -12,7 +12,7 @@ import { ReservationListComponent } from './reservations/reservation-list.compon
 import { HttpClientModule } from '@angular/common/http';
 import { ServicesService } from './services.service';
 import { ReservationDialogComponent } from './services/reservation-dialog/reservation-dialog.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ ServicesService],
   bootstrap: [AppComponent]

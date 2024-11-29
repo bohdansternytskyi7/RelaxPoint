@@ -9,7 +9,7 @@
         </option>
       </select>
       <label for="date">Data:</label>
-      <input type="date" id="date" [(ngModel)]="selectedDate">
+      <input type="date" id="date" [min]="minDate" [(ngModel)]="selectedDate">
       <label for="time">Godzina:</label>
       <select id="time" [(ngModel)]="selectedTime">
         <option *ngFor="let time of availableTimes" [value]="time">

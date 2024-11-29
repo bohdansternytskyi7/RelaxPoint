@@ -1,24 +1,30 @@
-<div class="services-list">
-  <h2>Lista Usług</h2>
-  <div *ngIf="error" class="error">{{ error }}</div>
-  <div *ngIf="loading" class="loading">Ładowanie danych...</div>
-  <table *ngIf="!loading && !error">
-    <thead>
-      <tr>
-        <th>Nazwa</th>
-        <th>Cena</th>
-        <th>Czas Trwania</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let service of services">
-        <td>{{ service.name }}</td>
-        <td>{{ service.price }} PLN</td>
-        <td>{{ service.duration }}</td>
-        <td><button class="btn-book" (click)="openDialog(service)">Rezerwuj</button></td>
-      </tr>
-    </tbody>
-  </table>
+<div *ngIf="confirmationMessage; else serviceList" class="message">
+  <h3>Thank You!</h3>
+  <p>Your reservation has been successfully completed.</p>
 </div>
+<ng-template #serviceList>
+  <div class="service-list">
+    <h2>Lista Usług</h2>
+    <div *ngIf="error" class="error">{{ error }}</div>
+    <div *ngIf="loading" class="loading">Ładowanie danych...</div>
+    <table *ngIf="!loading && !error">
+      <thead>
+        <tr>
+          <th>Nazwa</th>
+          <th>Cena</th>
+          <th>Czas Trwania</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let service of services">
+          <td>{{ service.name }}</td>
+          <td>{{ service.price }} PLN</td>
+          <td>{{ service.duration }}</td>
+          <td><button class="btn-book" (click)="openDialog(service)">Rezerwuj</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-template>
 <ng-template #dialogContainer></ng-template>

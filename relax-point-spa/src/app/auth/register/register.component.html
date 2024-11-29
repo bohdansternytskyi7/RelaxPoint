@@ -1,18 +1,34 @@
 <div class="auth-form">
   <h2>Rejestracja</h2>
-  <form>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Imię:</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" formControlName="name" required>
+      <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="error">
+        Imię jest wymagane.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="surname">Nazwisko:</label>
+      <input type="text" id="surname" formControlName="surname" required>
+      <div *ngIf="registerForm.get('surname')?.invalid && registerForm.get('surname')?.touched" class="error">
+        Nazwisko jest wymagane.
+      </div>
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" formControlName="email" required>
+      <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error">
+        Proszę podać poprawny email.
+      </div>
     </div>
     <div class="form-group">
       <label for="password">Hasło:</label>
-      <input type="password" id="password" name="password" required>
+      <input type="password" id="password" formControlName="password" required>
+      <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error">
+        Hasło jest wymagane i musi mieć co najmniej 6 znaków.
+      </div>
     </div>
-    <button type="submit" class="btn-submit">Zarejestruj</button>
+    <button type="submit" class="btn-submit" [disabled]="registerForm.invalid">Zarejestruj</button>
   </form>
 </div>

@@ -11,11 +11,12 @@ import { Subscription } from 'rxjs';
 })
 export class ServicesListComponent implements OnInit, OnDestroy {
   @ViewChild('dialogContainer', { read: ViewContainerRef }) container!: ViewContainerRef;
-  services: Service[] = [];
   loading = true;
-  error: string | null = null;
   isDialogOpen = false;
+  services: Service[] = [];
   selectedService?: Service;
+  error: string | null = null;
+  confirmationMessage: boolean = false;
 
   private subs: Subscription[] = [];
 
@@ -30,8 +31,11 @@ export class ServicesListComponent implements OnInit, OnDestroy {
       dialogRef.destroy();
     }));
     this.subs.push(dialogRef.instance.confirmReservation.subscribe(res => {
-      console.log(res.service);
+      this.confirmationMessage = true;
       dialogRef.destroy();
+      setTimeout(() => {
+        this.confirmationMessage = false;
+      }, 3000);
     }));
   }
 

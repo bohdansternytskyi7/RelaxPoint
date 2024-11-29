@@ -1,1 +1,9 @@
 @import '../auth.scss';
+
+.btn-submit {
+  background-color: $orange-color !important;
+
+  &:hover {
+    background-color: $orange-darker-color !important;
+  }
+}
